@@ -1,11 +1,10 @@
-import java.util.Scanner;
-import java.util.InputMismatchException;
-
-/**
-* Program that utilizes parallel arrays to simulate a grocery management system.
-*/
-public class Main {
-    public static void main(String[] args) throws Exception {
+    /**
+     * Entry point of the program. Sets up the parallel arrays with starting
+     * items and runs the user menu until the user chooses to exit.
+     *
+     * @param args command-line arguments (not used)
+     */
+    public static void main(String[] args) {
         String[] itemNames = new String[10];
         double[] itemPrices = new double[10];
         int[] itemStocks = new int[10];
@@ -23,26 +22,33 @@ public class Main {
         itemNames[2] = "Limes";
         itemPrices[2] = 0.50;
         itemStocks[2] = 50;
-        
-        System.out.println("Welcome to the Grocery Managment System");
-        
-        while(true) {
+
+        System.out.println("Welcome to the Grocery Management System");
+
+        while (true) {
             System.out.println("Select from the following menus:");
             System.out.println("1. View\n2. Restock\n3. Exit");
             int option = readOption(input);
             input.nextLine();
 
             if (option == 1) {
-                //printInventory(itemNames, itemPrices, itemStocks);
+                Inventory.printInventory(itemNames, itemPrices, itemStocks);
             }
             else if (option == 2) {
-                System.out.println("What item to restock?: ");
-                String target = input.nextLine();
+                System.out.print("What item to restock?: ");
+                String target = input.nextLine().trim();
 
                 System.out.print("How many will be restocked?: ");
-                int amount = input.nextInt();
-
-                //restockItem(itemNames, itemStocks, target, amount);
+                try {
+                    int amount = Integer.parseInt(input.nextLine().trim());
+                    if (amount < 0) {
+                        System.out.println("Amount cannot be negative.");
+                    } else {
+                        Restock.restockItem(itemNames, itemStocks, target, amount);
+                    }
+                } catch (NumberFormatException e) {
+                    System.out.println("Invalid amount. Please enter a whole number.");
+                }
             }
             else {
                 System.out.println("Exiting...");
@@ -51,8 +57,9 @@ public class Main {
 
             System.out.println("-------------------------------------");
         }
-        
+
         input.close();
     }   
 }
 
+    }
