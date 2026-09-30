@@ -1,3 +1,11 @@
+import java.util.Scanner;
+import java.util.InputMismatchException;
+
+/**
+ * Program that utilizes parallel arrays to simulate a grocery management system.
+ * Provides a text menu to view the inventory, restock an item, or exit.
+ */
+public class Main {
     /**
      * Entry point of the program. Sets up the parallel arrays with starting
      * items and runs the user menu until the user chooses to exit.
@@ -63,3 +71,24 @@
 }
 
     }
+    /**
+     * Reads a valid menu option from the user.
+     *
+     * @param input the scanner used to read input
+     * @return a valid option between 1 and 3
+     */
+    private static int readOption(Scanner input) {
+        while (true) {
+            try {
+                int value = input.nextInt();
+                if (value >= 1 && value <= 3) {
+                    return value;
+                }
+                System.out.println("Please enter either 1, 2 or 3.");
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a number.");
+                input.nextLine();
+            }    
+        }
+    }
+}
