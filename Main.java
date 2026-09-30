@@ -1,3 +1,11 @@
+import java.util.scanner;
+import java.util.InputMismatchException;
+
+/**
+ * Program that utilizes parallel arrays to simulate a grocery management system.
+ * Provides a text menu to view the inventory, restock an item, or exit.
+ */
+public class Main {
     /**
      * Entry point of the program. Sets up the parallel arrays with starting
      * items and runs the user menu until the user chooses to exit.
@@ -60,3 +68,4 @@
 
         input.close();
     }
+}
