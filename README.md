@@ -11,6 +11,4 @@ Nishant Thapa commits: Main coordinator that organized repo and started communic
 Savion Mychal Judge Watson: Implemented Main.java and README file description.
 Asim Lamsal: Implemented Restock.java and Inventory.java.
 
-The program is straight forward to use as it handles any normal errors effectively. 
-
 
