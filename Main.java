@@ -68,9 +68,6 @@ public class Main {
 
         input.close();
     }   
-}
-
-    }
     /**
      * Reads a valid menu option from the user.
      *
