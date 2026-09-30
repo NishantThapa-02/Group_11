@@ -14,6 +14,8 @@ public class Inventory {
         for (int i = 0; i < names.length; i++) {
             if (names[i] != null) {
                 System.out.println(names[i] + " - $" + prices[i] + " - Stock: " + stocks[i]);
+            } else {
+                // Empty slot: intentionally skipped
             }
         }
     }
