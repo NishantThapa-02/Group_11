@@ -68,4 +68,25 @@ public class Main {
 
         input.close();
     }
+    /**
+     * Reads a valid menu option from the user.
+     *
+     * @param input the scanner used to read input
+     * @return a valid option between 1 and 3
+     */
+    private static int readOption(Scanner input) {
+        while (true) {
+            try {
+                int value = input.nextInt();
+                if (value >= 1 && value <= 3) {
+                    return value;
+                }
+                System.out.println("Please enter either 1, 2 or 3.");
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a number.");
+                input.nextLine();
+            }    
+        }
+    }
+
 }
