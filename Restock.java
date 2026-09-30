@@ -1,3 +1,6 @@
+/**
+ * Restock handles searching for an item and adding to its stock.
+ */
 public class Restock {
 
     /**
