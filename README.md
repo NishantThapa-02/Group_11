@@ -21,3 +21,12 @@ Asim Lamsal: Implemented Restock.java and Inventory.java.
 
 Screenshot showcases view option working, restock finding "limes", ignoring the case and updating new stock, and exit option working.
 
+
+UML diagram:
+
+<img width="1070" height="626" alt="image" src="https://github.com/user-attachments/assets/084c37ca-81f2-486c-9815-c7c03376f19e" />
+
+
+Output:
+
+<img width="350" height="469" alt="Grocery Management Screenshot" src="https://github.com/user-attachments/assets/15f27323-ffae-41c1-a221-993ef189db3b" />
